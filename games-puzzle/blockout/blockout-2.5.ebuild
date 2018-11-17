@@ -6,9 +6,9 @@ inherit games eutils
 
 DESCRIPTION="BlockOut II is an adaptation of the original Blockout DOS game edited by California Dreams(1989).  BL II has the same features than the original game. Score calculation is also nearly similar to the original."
 HOMEPAGE="http://www.blockout.net/blockout2/"
-MYP=bl24
-SRC_URI="mirror://sourceforge/blockout/BlockOut%202.4/${MYP}-src-linux-i586.tar.gz"
-
+SRC_URI="mirror://sourceforge/project/blockout/blockout/BlockOut%202.5/bl25-src.tar.gz"
+#https://sourceforge.net/projects/blockout/files/blockout/BlockOut%202.5/bl25-src.tar.gz/download
+#https://vorboss.dl.sourceforge.net/project/blockout/blockout/BlockOut%202.5/bl25-src.tar.gz
 LICENSE="Creative commons"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -17,7 +17,7 @@ IUSE=""
 RDEPEND=""
 DEPEND="${RDEPEND}"
 
-S=${MYP}_lin_src/BlockOut
+#S=${MYP}_lin_src/BlockOut
 
 
 src_compile(){
