@@ -1,12 +1,13 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+EAPI=5
 
-inherit games
+inherit autotools desktop
 
 DESCRIPTION="Pushover is a fun puzzle game originally published by Ocean in 1992."
-HOMEPAGE="http://pushover.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+HOMEPAGE="https://github.com/pushover/pushover.github.io"
+SRC_URI="https://github.com/pushover/pushover.github.io/archive/${PV}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -18,10 +19,18 @@ DEPEND="dev-lang/lua
 	media-libs/sdl-ttf"
 RDEPEND="${DEPEND}"
 
+S=${WORKDIR}/pushover.github.io-0.0.5/
+
+src_compile() {
+        eautoconf
+        eautomake
+        emake DESTDIR="${D}"|| die "einstall failed"
+
+}
+
 src_install() {
-	emake DESTDIR="${D}" install || die "einstall failed"
-        doicon pushover.ico
-        make_desktop_entry pushover Pushover /usr/share/pixmaps/pushover.ico
-	prepgamesdirs 
+        emake DESTDIR="${D}" install || die "einstall failed"
+#        doicon pushover.ico
+        make_desktop_entry /usr/games/bin/pushover pushover generated/pushover_64x64.png
 
 }
