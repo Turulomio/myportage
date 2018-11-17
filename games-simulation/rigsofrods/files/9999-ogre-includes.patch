@@ -1,0 +1,16 @@
+# https://github.com/RigsOfRods/rigs-of-rods/issues/1377
+
+diff --git a/source/main/gfx/GfxActor.cpp b/source/main/gfx/GfxActor.cpp
+index 9405e427..7690aac3 100644
+--- a/source/main/gfx/GfxActor.cpp
++++ b/source/main/gfx/GfxActor.cpp
+@@ -28,6 +28,9 @@
+ #include <OgreResourceGroupManager.h>
+ #include <OgreTechnique.h>
+ #include <OgreTextureUnitState.h>
++#include <OgreTextureManager.h>
++#include <OgreSceneManager.h>
++#include <OgreRenderWindow.h>
+ #include <OgrePass.h>
+ 
+ RoR::GfxActor::~GfxActor()
