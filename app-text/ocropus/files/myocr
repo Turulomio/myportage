@@ -1,6 +1,0 @@
-#!/bin/bash
-convert -compress None -colorspace Gray "$1" "$1.tif"
-tesseract "$1.tif" "$1" -l spa
-cat "$1.txt"
-rm "$1.tif"
-mv "$1.txt" "$1.ocr.txt"

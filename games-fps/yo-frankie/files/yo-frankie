@@ -1,5 +1,0 @@
-#!/bin/bash
-pwd=`pwd`
-cd /usr/share/games/yo-frankie/
-blenderplayer yo_frankie_stub.blend 
-cd $pwd
