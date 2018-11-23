@@ -8,7 +8,7 @@ inherit flag-o-matic games
 
 DESCRIPTION="Arkanoid/Breakout clone with pretty graphics."
 HOMEPAGE="https://sourceforge.net/projects/sdl-ball"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${PV}/SDL-Ball_${PV}_build-6_src.tar.xz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -25,17 +25,17 @@ RDEPEND="${DEPEND}"
 S=${WORKDIR}/${PN}
 dir=${GAMES_DATADIR}/${PN}
 
-src_prepare() {
-	if use !sound; then
-		sed -i -e 's:-lSDL_mixer::' Makefile
-		rm -r themes/default/snd || die "removing soundfiles failed"
-		rm -r themes/dio-sound-theme || die "removing soundfiles failed"
-		append-flags "-DNOSOUND"
-	fi
-	
-	# so we can start afresh
-	rm main.o
-}
+#src_prepare() {
+#	if use !sound; then
+#		sed -i -e 's:-lSDL_mixer::' Makefile
+#		rm -r themes/default/snd || die "removing soundfiles failed"
+#		rm -r themes/dio-sound-theme || die "removing soundfiles failed"
+#		append-flags "-DNOSOUND"
+#	fi
+#	
+#	# so we can start afresh
+#	rm main.o
+#}
 
 src_compile() {
 	if use wiimote; then
