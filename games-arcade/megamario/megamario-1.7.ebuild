@@ -10,8 +10,7 @@ MY_PN=MegaMario
 
 DESCRIPTION="Mario remake"
 HOMEPAGE="http://mmario.sourceforge.net/"
-SRC_URI="mirror://sourceforge/mmario/${MY_PN}_v${PV}c_full.zip"
-
+SRC_URI="mirror://sourceforge/mmario/Mega%20Mario%20Full%20Game/Mega%20Mario%20v1.7%20%28Full%20Game%2C%20high%20Quality%20music%29/MegaMario_v1.7_full.zip"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
@@ -24,15 +23,15 @@ RDEPEND="media-libs/libsdl
 	media-libs/sdl-mixer"
 DEPEND="${RDEPEND}"
 
-src_prepare(){
-	epatch "${FILESDIR}"/${PV}-gcc43.patch
-	epatch "${FILESDIR}"/${PV}-hqmusic.patch
-	epatch "${FILESDIR}"/${PV}-logpath.patch
-        sed -s \
-           -e 's/\/home\/opt/${GAMES_DATADIR}/g' -i Makefile \
-           -e 's/\/share//g' -i Makefile \
-		|| die "sed failed"
-}
+#src_prepare(){
+#	epatch "${FILESDIR}"/${PV}-gcc43.patch
+#	epatch "${FILESDIR}"/${PV}-hqmusic.patch
+#	epatch "${FILESDIR}"/${PV}-logpath.patch
+#        sed -s \
+#           -e 's/\/home\/opt/${GAMES_DATADIR}/g' -i Makefile \
+#           -e 's/\/share//g' -i Makefile \
+#		|| die "sed failed"
+#}
 
 src_install() {
 	local datadir="${GAMES_DATADIR}"/${PN}
